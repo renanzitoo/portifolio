@@ -1,4 +1,3 @@
-
 import { getMessages, Locale } from "@/lib/i18n";
 import About from "../components/About/About";
 import Projects from "../components/Projects/Projects";
@@ -23,11 +22,11 @@ export async function generateMetadata({
 }
 
 // ✅ Tipagem correta do componente Page
-export default async function Page({
-  params,
-}: {
+interface PageProps {
   params: { lang: Locale };
-}) {
+}
+
+export default async function Page({ params }: PageProps) {
   const messages = await getMessages(params.lang);
 
   return (
