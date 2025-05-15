@@ -7,7 +7,6 @@ export default function LangLayout({
   children,
 }: {
   children: ReactNode;
-  params: { lang: Locale };
 }) {
   return (
     <>
