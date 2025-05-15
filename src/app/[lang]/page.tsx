@@ -1,4 +1,4 @@
-import { getMessages, Locale } from "@/lib/i18n";
+import { getMessages, Locale, locales } from "@/lib/i18n";
 import About from "../components/About/About";
 import Projects from "../components/Projects/Projects";
 import HighlightedProjects from "../components/High/HighlightedProjects";
@@ -6,7 +6,11 @@ import Contact from "../components/Contact/Contact";
 import { NavBar } from "../components/navBar/NavBar";
 import type { Metadata } from "next";
 
-// ✅ Tipagem correta do `generateMetadata`
+// Gera as rotas estáticas para cada idioma
+export function generateStaticParams() {
+  return locales.map(lang => ({ lang }));
+}
+
 export async function generateMetadata({
   params,
 }: {
@@ -21,7 +25,6 @@ export async function generateMetadata({
   };
 }
 
-// ✅ Tipagem correta do componente Page
 interface PageProps {
   params: { lang: Locale };
 }
