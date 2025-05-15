@@ -1,4 +1,4 @@
-import { getMessages, Locale, locales } from "@/lib/i18n";
+import { getMessages, Locale, locales, isValidLocale } from "@/lib/i18n";
 import About from "../components/About/About";
 import Projects from "../components/Projects/Projects";
 import HighlightedProjects from "../components/High/HighlightedProjects";
@@ -14,9 +14,10 @@ export function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: {
-  params: { lang: Locale };
+  params: { lang: string };
 }): Promise<Metadata> {
-  const messages = await getMessages(params.lang);
+  const lang = isValidLocale(params.lang) ? params.lang : "en";
+  const messages = await getMessages(lang as Locale);
   return {
     title: "Renan Costa",
     icons: {
@@ -26,15 +27,16 @@ export async function generateMetadata({
 }
 
 interface PageProps {
-  params: { lang: Locale };
+  params: { lang: string };
 }
 
 export default async function Page({ params }: PageProps) {
-  const messages = await getMessages(params.lang);
+  const lang = isValidLocale(params.lang) ? params.lang : "en";
+  const messages = await getMessages(lang as Locale);
 
   return (
     <>
-      <NavBar lang={params.lang} />
+      <NavBar lang={lang} />
       <div className="px-4 sm:px-12 lg:px-32 xl:px-12 max-w-4xl mx-auto">
         <About messages={messages} />
         <Projects messages={messages} />
