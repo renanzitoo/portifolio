@@ -13,9 +13,6 @@ export async function generateMetadata({ params }: Props) {
   const messages = await getMessages(params.lang);
   return {
     title: "Renan Costa", 
-    icons: {
-      icon: "./profile.jpeg"
-    }
   };
 }
 

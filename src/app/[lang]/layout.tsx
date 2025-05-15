@@ -1,21 +1,21 @@
+// app/[lang]/layout.tsx
+
 import { ReactNode } from "react";
 import { NavBar } from "../components/navBar/NavBar";
 import { Locale } from "@/lib/i18n";
-import '../globals.css';
-import { Head } from "next/document";
+import "../globals.css";
 
 
-
-interface Props {
+export default function LangLayout({
+  children,
+  params,
+}: {
   children: ReactNode;
   params: { lang: Locale };
-}
-
-export default function LangLayout({ children, params }: Props) {
+}) {
   return (
     <>
-
-      <NavBar lang={params.lang}></NavBar>
+      <NavBar lang={params.lang} />
       <main>{children}</main>
     </>
   );
