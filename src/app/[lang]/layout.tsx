@@ -1,11 +1,9 @@
-// app/[lang]/layout.tsx
-
 import { ReactNode } from "react";
 import { NavBar } from "../components/navBar/NavBar";
 import { Locale } from "@/lib/i18n";
 import "../globals.css";
 
-
+// NÃO use interface Props aqui
 export default function LangLayout({
   children,
   params,
