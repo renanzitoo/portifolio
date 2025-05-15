@@ -17,7 +17,7 @@ export async function generateMetadata({
   params: { lang: string };
 }): Promise<Metadata> {
   const lang = isValidLocale(params.lang) ? params.lang : "en";
-  const messages = await getMessages(lang as Locale);
+  await getMessages(lang as Locale); // Opcional, dependendo do seu uso
   return {
     title: "Renan Costa",
     icons: {
@@ -26,9 +26,12 @@ export async function generateMetadata({
   };
 }
 
-interface PageProps {
-  params: { lang: string };
-}
+// ✅ Aqui está o tipo correto — NÃO torne async o tipo
+type PageProps = {
+  params: {
+    lang: string;
+  };
+};
 
 export default async function Page({ params }: PageProps) {
   const lang = isValidLocale(params.lang) ? params.lang : "en";
