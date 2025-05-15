@@ -1,0 +1,60 @@
+{
+  "about.title": "Sobre Mim",
+  "about": "Sou estudante de Engenharia de Computação e Desenvolvedor Full-Stack dedicado, com experiência prática na criação de aplicações web utilizando React e Node.js. Ao longo do tempo, desenvolvi diversos projetos que demonstram minha capacidade de atuar tanto no front-end quanto no back-end. Estou constantemente aprendendo e explorando novas tecnologias na área da computação para crescer como desenvolvedor e entregar soluções melhores.",
+  "nav-title": "Renan Costa - Engenheiro de Computação",
+  "nav-about": "Sobre",
+  "nav-projects": "Projetos",
+  "nav-contact": "Contato",
+  "projects.title": "Meus Projetos",
+
+  "projects.1.title": "Sistema Corporativo – Embrapii/IFSMG",
+  "projects.1.role": "Desenvolvedor Back-End (2022–2023)",
+  "projects.1.stack": "Node.js, TypeScript, Express.js, Docker, Swagger",
+  "projects.1.desc": "Desenvolvimento do back-end de uma aplicação para as empresas Bayer, Cooxupé e Quanticum, com APIs documentadas via Swagger e conteinerização com Docker. Projeto ágil em equipe.",
+
+  "projects.2.title": "Aplicativo em Flutter – NNT",
+  "projects.2.role": "Desenvolvedor Mobile (2023)",
+  "projects.2.stack": "Flutter, Firebase",
+  "projects.2.desc": "Participei do desenvolvimento de um aplicativo mobile desde a ideia inicial até o MVP, usando Flutter e Firebase. Aplicação construída em equipe com metodologia ágil.",
+
+  "projects.3.title": "Sistema Front-End – Embrapii/IFSMG",
+  "projects.3.role": "Desenvolvedor Full-Stack (2024)",
+  "projects.3.stack": "React.js",
+  "projects.3.desc": "Desenvolvimento do front-end de um sistema web utilizando React com foco em componentização e reutilização de código. Trabalho realizado em equipe com entregas constantes.",
+  "highlighted.title": "Projetos em Destaque",
+
+  "highlighted.1.title": "upload-AI",
+  "highlighted.1.description": "Aplicação que utiliza a API da OpenAI para gerar descrições e títulos de vídeos automaticamente. Desenvolvida com React.js e Node.js.",
+  "highlighted.1.language": "TypeScript",
+  "highlighted.1.link": "https://github.com/renanzitoo/upload-AI",
+
+  "highlighted.2.title": "TransactionsREST-API",
+  "highlighted.2.description": "API RESTful para controle de transações financeiras, com autenticação e atributos como valor, tipo e título.",
+  "highlighted.2.language": "TypeScript",
+  "highlighted.2.link": "https://github.com/renanzitoo/TransactionsREST-API",
+
+  "highlighted.3.title": "challenge-01-nodeJS",
+  "highlighted.3.description": "Desafio do Ignite Node.js: construção de uma API RESTful para praticar fundamentos da stack back-end com JavaScript.",
+  "highlighted.3.language": "JavaScript",
+  "highlighted.3.link": "https://github.com/renanzitoo/challenge-01-nodeJS",
+
+  "highlighted.4.title": "market-api",
+  "highlighted.4.description": "API para um mercado fictício, criada com fins de aprendizado em arquitetura REST e TypeScript.",
+  "highlighted.4.language": "TypeScript",
+  "highlighted.4.link": "https://github.com/renanzitoo/market-api",
+
+  "highlighted.5.title": "teste-tecnico-control361",
+  "highlighted.5.description": "Repositório de teste técnico com aplicação back-end desenvolvida em TypeScript.",
+  "highlighted.5.language": "TypeScript",
+  "highlighted.5.link": "https://github.com/renanzitoo/teste-tecnico-control361",
+
+  "highlighted.6.title": "crud-examples",
+  "highlighted.6.description": "Repositório com exemplos de APIs CRUD em diferentes linguagens, conectando a um banco PostgreSQL. Útil para estudos e como referência prática. Inclui arquivos .env padronizados para facilitar a configuração.",
+  "highlighted.6.language": "TypeScript",
+  "highlighted.6.link": "https://github.com/renanzitoo/crud-examples",
+
+  "contact.title": "Entre em Contato",
+  "contact.description": "Fique à vontade para me chamar por e-mail ou visitar minhas redes profissionais abaixo."
+
+
+}
