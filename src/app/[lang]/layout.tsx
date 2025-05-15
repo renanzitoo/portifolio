@@ -3,17 +3,15 @@ import { NavBar } from "../components/navBar/NavBar";
 import { Locale } from "@/lib/i18n";
 import "../globals.css";
 
-// NÃO use interface Props aqui
 export default function LangLayout({
   children,
-  params,
 }: {
   children: ReactNode;
   params: { lang: Locale };
 }) {
   return (
     <>
-      <NavBar lang={params.lang} />
+
       <main>{children}</main>
     </>
   );

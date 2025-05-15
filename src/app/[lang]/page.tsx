@@ -4,6 +4,7 @@ import About from "../components/About/About";
 import Projects from "../components/Projects/Projects";
 import HighlightedProjects from "../components/High/HighlightedProjects";
 import Contact from "../components/Contact/Contact";
+import { NavBar } from "../components/navBar/NavBar";
 
 interface Props {
   params: { lang: Locale };
@@ -20,11 +21,15 @@ export default async function Page({ params }: Props) {
   const messages = await getMessages(params.lang);
 
   return (
+    <>
+    <NavBar lang={params.lang} />
     <div className="px-4 sm:px-12 lg:px-32 xl:px-12 max-w-4xl mx-auto">
+      
       <About messages={messages} />
       <Projects messages={messages} />
       <HighlightedProjects messages={messages} />
       <Contact messages={messages} />
     </div>
+    </>
   );
 }
