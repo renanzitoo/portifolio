@@ -7,6 +7,7 @@ import Contact from "../components/Contact/Contact";
 import { NavBar } from "../components/navBar/NavBar";
 import type { Metadata } from "next";
 
+// ✅ Tipagem correta do `generateMetadata`
 export async function generateMetadata({
   params,
 }: {
@@ -21,6 +22,7 @@ export async function generateMetadata({
   };
 }
 
+// ✅ Tipagem correta do componente Page
 export default async function Page({
   params,
 }: {

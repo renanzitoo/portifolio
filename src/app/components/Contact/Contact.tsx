@@ -15,14 +15,14 @@ export default function Contact({ messages }: Props) {
       <h2 className="text-3xl font-bold text-center">
         {messages['contact.title']}
       </h2>
-      <p className="text-center text-[--color-muted] max-w-xl">
+      <p className="text-center text-gray-700 max-w-xl">
         {messages['contact.description']}
       </p>
 
       <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-4">
         <a
           href="mailto:renan.costa2098@gmail.com"
-          className="flex items-center gap-2 text-[--color-muted] hover:text-[--color-foreground] hover:underline"
+          className="flex items-center gap-2 text-blue-600 hover:underline"
         >
           <Mail className="w-5 h-5" />
           renan.costa2098@gmail.com
@@ -32,7 +32,7 @@ export default function Contact({ messages }: Props) {
           href="https://github.com/renanzitoo"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-2 text-[--color-muted] hover:text-[--color-foreground] hover:underline"
+          className="flex items-center gap-2 text-blue-600 hover:underline"
         >
           <Github className="w-5 h-5" />
           github.com/renanzitoo
@@ -42,7 +42,7 @@ export default function Contact({ messages }: Props) {
           href="https://www.linkedin.com/in/renanzitoo/"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-2 text-[--color-muted] hover:text-[--color-foreground] hover:underline"
+          className="flex items-center gap-2 text-blue-600 hover:underline"
         >
           <Linkedin className="w-5 h-5" />
           linkedin.com/in/renanzitoo

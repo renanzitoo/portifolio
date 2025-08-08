@@ -11,58 +11,50 @@
   "projects.1.role": "Desenvolvedor Back-End (2022–2023)",
   "projects.1.stack": "Node.js, TypeScript, Express.js, Docker, Swagger",
   "projects.1.desc": "Desenvolvimento do back-end de uma aplicação para as empresas Bayer, Cooxupé e Quanticum, com APIs documentadas via Swagger e conteinerização com Docker. Projeto ágil em equipe.",
-  "projects.1.details": "Projetei e implementei APIs REST para uma aplicação corporativa utilizada por Bayer, Cooxupé e Quanticum. Atuei no modelagem de recursos, autenticação/autorização, validação de entrada, tratamento de erros e versionamento de API. Escrevi a documentação com Swagger/OpenAPI, conteinerizei serviços com Docker para ambientes reprodutíveis e colaborei em tarefas de CI. Trabalho em equipe com revisões de código e entregas incrementais em metodologia ágil.",
 
   "projects.2.title": "Aplicativo em Flutter – NNT",
   "projects.2.role": "Desenvolvedor Mobile (2023)",
   "projects.2.stack": "Flutter, Firebase",
   "projects.2.desc": "Participei do desenvolvimento de um aplicativo mobile desde a ideia inicial até o MVP, usando Flutter e Firebase. Aplicação construída em equipe com metodologia ágil.",
-  "projects.2.details": "Atuei desde a ideação até o MVP. Implementei telas, navegação e gerenciamento de estado, integrei Firebase Authentication e Cloud Firestore para dados em tempo real e tratei validações de formulários e estados de erro. Participei de refinamento de backlog e cerimônias ágeis em uma equipe colaborativa.",
 
   "projects.3.title": "Sistema Front-End – Embrapii/IFSMG",
   "projects.3.role": "Desenvolvedor Full-Stack (2024)",
   "projects.3.stack": "React.js",
   "projects.3.desc": "Desenvolvimento do front-end de um sistema web utilizando React com foco em componentização e reutilização de código. Trabalho realizado em equipe com entregas constantes.",
-  "projects.3.details": "Construí o front-end em React com componentes reutilizáveis e layout responsivo. Integrei com APIs de back-end, implementei formulários e validações no cliente, com foco em acessibilidade e performance. Contribuí na definição de estrutura de componentes e convenções de estilo para melhorar a manutenibilidade e a velocidade de entrega.",
-
   "highlighted.title": "Projetos em Destaque",
 
   "highlighted.1.title": "upload-AI",
   "highlighted.1.description": "Aplicação que utiliza a API da OpenAI para gerar descrições e títulos de vídeos automaticamente. Desenvolvida com React.js e Node.js.",
   "highlighted.1.language": "TypeScript",
   "highlighted.1.link": "https://github.com/renanzitoo/upload-AI",
-  "highlighted.1.details": "Aplicação web que recebe um vídeo, gera a transcrição e usa prompts da OpenAI para produzir títulos e descrições com foco em SEO. Implementei fluxo de upload, feedback de progresso, templates de prompts e salvaguardas contra limites de tokens/rate limit. Priorização de UI limpa e iteração rápida.",
 
   "highlighted.2.title": "TransactionsREST-API",
   "highlighted.2.description": "API RESTful para controle de transações financeiras, com autenticação e atributos como valor, tipo e título.",
   "highlighted.2.language": "TypeScript",
   "highlighted.2.link": "https://github.com/renanzitoo/TransactionsREST-API",
-  "highlighted.2.details": "API REST para gerir transações com autenticação, categorias, valores e tipos. Inclui validação de entrada, paginação e filtros, além de persistência de dados. Endpoints documentados e scripts para desenvolvimento local com Docker.",
 
   "highlighted.3.title": "challenge-01-nodeJS",
   "highlighted.3.description": "Desafio do Ignite Node.js: construção de uma API RESTful para praticar fundamentos da stack back-end com JavaScript.",
   "highlighted.3.language": "JavaScript",
   "highlighted.3.link": "https://github.com/renanzitoo/challenge-01-nodeJS",
-  "highlighted.3.details": "Desafio educacional em Node.js criando uma API REST do zero. Prática de roteamento, middlewares, validação de requisições e persistência em memória. Foco em código limpo e testabilidade.",
 
   "highlighted.4.title": "market-api",
   "highlighted.4.description": "API para um mercado fictício, criada com fins de aprendizado em arquitetura REST e TypeScript.",
   "highlighted.4.language": "TypeScript",
   "highlighted.4.link": "https://github.com/renanzitoo/market-api",
-  "highlighted.4.details": "API de prática para um mercado fictício, modelando produtos, clientes e pedidos. Implementação de endpoints CRUD, autenticação e regras de negócio básicas. Escrito em TypeScript seguindo convenções REST.",
 
   "highlighted.5.title": "teste-tecnico-control361",
   "highlighted.5.description": "Repositório de teste técnico com aplicação back-end desenvolvida em TypeScript.",
   "highlighted.5.language": "TypeScript",
   "highlighted.5.link": "https://github.com/renanzitoo/teste-tecnico-control361",
-  "highlighted.5.details": "Repositório de avaliação técnica implementando endpoints e regras de negócio específicas sob restrição de tempo. Ênfase em estrutura clara, tipagem em TypeScript e correção da API.",
 
   "highlighted.6.title": "crud-examples",
-  "highlighted.6.description": "Repositório com exemplos de CRUD APIs em diferentes linguagens, conectando a um banco PostgreSQL. Útil para estudos e como referência prática. Inclui arquivos .env padronizados para facilitar a configuração.",
+  "highlighted.6.description": "Repositório com exemplos de APIs CRUD em diferentes linguagens, conectando a um banco PostgreSQL. Útil para estudos e como referência prática. Inclui arquivos .env padronizados para facilitar a configuração.",
   "highlighted.6.language": "TypeScript",
   "highlighted.6.link": "https://github.com/renanzitoo/crud-examples",
-  "highlighted.6.details": "Coleção de exemplos CRUD em diferentes stacks, todos conectados ao PostgreSQL. Arquivos .env padronizados e scripts para subir o ambiente rapidamente. Útil como referência de estudo e template para novos serviços.",
 
   "contact.title": "Entre em Contato",
   "contact.description": "Fique à vontade para me chamar por e-mail ou visitar minhas redes profissionais abaixo."
+
+
 }

@@ -1,7 +1,5 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-
 interface Props {
   messages: Record<string, string>;
 }
@@ -16,16 +14,6 @@ export default function HighlightedProjects({ messages }: Props) {
     'highlighted.6',
   ];
 
-  const [openKey, setOpenKey] = useState<string | null>(null);
-
-  useEffect(() => {
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') setOpenKey(null);
-    };
-    window.addEventListener('keydown', onKey);
-    return () => window.removeEventListener('keydown', onKey);
-  }, []);
-
   return (
     <section
       id="highlighted-projects"
@@ -39,24 +27,13 @@ export default function HighlightedProjects({ messages }: Props) {
         {projectKeys.map((key) => (
           <div
             key={key}
-            role="button"
-            tabIndex={0}
-            aria-haspopup="dialog"
-            aria-label={`${messages[`${key}.title`]} - abrir detalhes`}
-            onClick={() => setOpenKey(key)}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                setOpenKey(key);
-              }
-            }}
-            className="w-60 md:h-60 border border-border rounded-xl p-4 shadow-md hover:shadow-lg transition-shadow ease-out flex flex-col justify-between overflow-hidden bg-card cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-border"
+            className="w-60 h-60 border border-gray-300 rounded-xl p-4 shadow-md hover:shadow-lg transition flex flex-col justify-between overflow-hidden"
           >
             <div>
               <h3 className="text-lg font-semibold mb-2">
                 {messages[`${key}.title`]}
               </h3>
-              <p className="text-sm line-clamp-4">
+              <p className="text-gray-700 text-sm line-clamp-4">
                 {messages[`${key}.description`]}
               </p>
             </div>
@@ -68,7 +45,7 @@ export default function HighlightedProjects({ messages }: Props) {
                 href={messages[`${key}.link`]}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-muted hover:text-foreground hover:underline"
+                className="text-blue-600 hover:underline"
               >
                 GitHub →
               </a>
@@ -76,44 +53,6 @@ export default function HighlightedProjects({ messages }: Props) {
           </div>
         ))}
       </div>
-
-      {openKey && (
-        <div role="dialog" aria-modal="true" className="fixed inset-0 z-50 flex items-stretch justify-stretch">
-          <div className="absolute inset-0 bg-gray-50 dark:bg-gray-900" onClick={() => setOpenKey(null)} />
-          <div className="relative z-10 w-full h-full bg-card">
-            <div className="sticky top-0 flex items-start justify-between p-4 border-b border-border bg-card">
-              <h3 className="text-xl font-semibold">{messages[`${openKey}.title`]}</h3>
-              <button
-                onClick={() => setOpenKey(null)}
-                className="px-3 py-1 rounded text-muted hover:text-foreground"
-                aria-label="Fechar"
-              >
-                ✕
-              </button>
-            </div>
-            <div className="p-4 h-[calc(100%-56px)] overflow-y-auto">
-              <div className="mx-auto max-w-3xl space-y-4">
-                <p className="text-sm text-muted"><strong>{messages[`${openKey}.language`]}</strong></p>
-                <div>
-                  <p className="text-base leading-relaxed whitespace-pre-line">
-                    {messages[`${openKey}.details`] ?? messages[`${openKey}.description`]}
-                  </p>
-                </div>
-                <div>
-                  <a
-                    href={messages[`${openKey}.link`]}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-muted hover:text-foreground underline"
-                  >
-                    GitHub →
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
     </section>
   );
 }
