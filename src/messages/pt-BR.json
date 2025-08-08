@@ -11,50 +11,58 @@
   "projects.1.role": "Desenvolvedor Back-End (2022–2023)",
   "projects.1.stack": "Node.js, TypeScript, Express.js, Docker, Swagger",
   "projects.1.desc": "Desenvolvimento do back-end de uma aplicação para as empresas Bayer, Cooxupé e Quanticum, com APIs documentadas via Swagger e conteinerização com Docker. Projeto ágil em equipe.",
+  "projects.1.details": "Desenhei e implementei um conjunto de endpoints REST para um sistema corporativo multiempresas (Bayer, Cooxupé, Quanticum). Atuei em modelagem de domínio, autenticação e autorização (acesso baseado em papéis), paginação e filtros, validação de entrada, padronização de erros e versionamento da API. Documentei com OpenAPI/Swagger e conteinerizei ambientes local/dev com Docker Compose. Colaborei em time ágil (planejamento, reviews, code review) e garanti qualidade de release com entregas incrementais e refatorações.",
 
   "projects.2.title": "Aplicativo em Flutter – NNT",
   "projects.2.role": "Desenvolvedor Mobile (2023)",
   "projects.2.stack": "Flutter, Firebase",
   "projects.2.desc": "Participei do desenvolvimento de um aplicativo mobile desde a ideia inicial até o MVP, usando Flutter e Firebase. Aplicação construída em equipe com metodologia ágil.",
+  "projects.2.details": "Implementei funcionalidades do zero até o MVP em um app Flutter. Criei telas, navegação e gerenciamento de estado, integrei Firebase Authentication e Cloud Firestore, e cuidei de validação de formulários e estados de erro. Foquei em UX (feedback de carregamento, empty states) e performance em dispositivos modestos. Participei das cerimônias ágeis e colaborei de perto com design e back-end.",
 
   "projects.3.title": "Sistema Front-End – Embrapii/IFSMG",
   "projects.3.role": "Desenvolvedor Full-Stack (2024)",
   "projects.3.stack": "React.js",
   "projects.3.desc": "Desenvolvimento do front-end de um sistema web utilizando React com foco em componentização e reutilização de código. Trabalho realizado em equipe com entregas constantes.",
+  "projects.3.details": "Desenvolvi um front-end em React com componentes reutilizáveis e layout responsivo. Integrei com APIs de back-end, implementei formulários com validação no cliente e inputs controlados, e dei atenção à acessibilidade (semântica, navegação por teclado) e performance (code splitting, memoization). Contribuí na definição de estrutura de componentes e convenções de estilo para acelerar entregas e facilitar manutenção.",
+
   "highlighted.title": "Projetos em Destaque",
 
   "highlighted.1.title": "upload-AI",
   "highlighted.1.description": "Aplicação que utiliza a API da OpenAI para gerar descrições e títulos de vídeos automaticamente. Desenvolvida com React.js e Node.js.",
   "highlighted.1.language": "TypeScript",
   "highlighted.1.link": "https://github.com/renanzitoo/upload-AI",
+  "highlighted.1.details": "Aplicação web que recebe um vídeo, gera a transcrição e usa templates de prompt para criar títulos e descrições com foco em SEO via OpenAI. Implementei fluxo de upload com feedback de progresso, processamento em background e proteções contra timeouts/limites de requisição. Priorização de UI limpa e iterações rápidas para validar ideias.",
 
   "highlighted.2.title": "TransactionsREST-API",
   "highlighted.2.description": "API RESTful para controle de transações financeiras, com autenticação e atributos como valor, tipo e título.",
   "highlighted.2.language": "TypeScript",
   "highlighted.2.link": "https://github.com/renanzitoo/TransactionsREST-API",
+  "highlighted.2.details": "API REST para finanças pessoais: criação, listagem e categorização de transações (valor, tipo, título), com autenticação, paginação e filtros por período/tipo. Validação de entrada e respostas de erro padronizadas. Scripts e ambiente Docker para rodar localmente.",
 
   "highlighted.3.title": "challenge-01-nodeJS",
   "highlighted.3.description": "Desafio do Ignite Node.js: construção de uma API RESTful para praticar fundamentos da stack back-end com JavaScript.",
   "highlighted.3.language": "JavaScript",
   "highlighted.3.link": "https://github.com/renanzitoo/challenge-01-nodeJS",
+  "highlighted.3.details": "Desafio educacional em Node.js: construir uma API REST do zero para praticar roteamento, middlewares, validação de requisições e persistência. Ênfase em código limpo, commits pequenos e endpoints legíveis.",
 
   "highlighted.4.title": "market-api",
   "highlighted.4.description": "API para um mercado fictício, criada com fins de aprendizado em arquitetura REST e TypeScript.",
   "highlighted.4.language": "TypeScript",
   "highlighted.4.link": "https://github.com/renanzitoo/market-api",
+  "highlighted.4.details": "API de prática que modela um pequeno mercado: produtos, clientes e pedidos. Endpoints CRUD, autenticação e regras de negócio básicas (por exemplo, checagem de estoque antes do checkout). Escrito em TypeScript seguindo convenções REST.",
 
   "highlighted.5.title": "teste-tecnico-control361",
   "highlighted.5.description": "Repositório de teste técnico com aplicação back-end desenvolvida em TypeScript.",
   "highlighted.5.language": "TypeScript",
   "highlighted.5.link": "https://github.com/renanzitoo/teste-tecnico-control361",
+  "highlighted.5.details": "Avaliação técnica sob restrição de tempo. Implementei endpoints e regras solicitadas mantendo estrutura de pastas clara e tipagem estrita em TypeScript. Adicionei README curto para rodar e testar a API.",
 
   "highlighted.6.title": "crud-examples",
-  "highlighted.6.description": "Repositório com exemplos de APIs CRUD em diferentes linguagens, conectando a um banco PostgreSQL. Útil para estudos e como referência prática. Inclui arquivos .env padronizados para facilitar a configuração.",
+  "highlighted.6.description": "Repositório com exemplos de CRUD APIs em diferentes linguagens, conectando a um banco PostgreSQL. Útil para estudos e como referência prática. Inclui arquivos .env padronizados para facilitar a configuração.",
   "highlighted.6.language": "TypeScript",
   "highlighted.6.link": "https://github.com/renanzitoo/crud-examples",
+  "highlighted.6.details": "Coleção de exemplos CRUD em diferentes stacks, todos usando PostgreSQL. Arquivos .env padronizados e scripts Docker para iniciar o banco rapidamente. Útil como referência de estudo e ponto de partida para novos serviços.",
 
   "contact.title": "Entre em Contato",
   "contact.description": "Fique à vontade para me chamar por e-mail ou visitar minhas redes profissionais abaixo."
-
-
 }
