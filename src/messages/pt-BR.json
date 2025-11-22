@@ -1,29 +1,29 @@
 {
   "about.title": "Sobre Mim",
-  "about": "Sou estudante de Engenharia de Computação e Desenvolvedor Full-Stack dedicado, com experiência prática na criação de aplicações web utilizando React e Node.js. Ao longo do tempo, desenvolvi diversos projetos que demonstram minha capacidade de atuar tanto no front-end quanto no back-end. Estou constantemente aprendendo e explorando novas tecnologias na área da computação para crescer como desenvolvedor e entregar soluções melhores.",
+  "about": "Sou estudante de Engenharia de Computação e Desenvolvedor Full-Stack dedicado, com experiência prática na criação de aplicações web utilizando React e Node.js. Ao longo do tempo, desenvolvi diversos projetos que demonstram minha capacidade de atuar tanto no front-end quanto no back-end. Estou constantemente aprendendo e explorando novas tecnologias na área da computação. Atualmente, estou estudando Web3 e segurança de contratos inteligentes, além de engenharia de dados, para crescer como desenvolvedor e entregar soluções melhores.",
   "nav-title": "Renan Costa - Engenheiro de Computação",
   "nav-about": "Sobre",
   "nav-projects": "Projetos",
   "nav-contact": "Contato",
-  "projects.title": "Meus Projetos",
+  "projects.title": "Minhas Experiências",
 
   "projects.1.title": "Sistema Corporativo – Embrapii/IFSMG",
   "projects.1.role": "Desenvolvedor Back-End (2022–2023)",
   "projects.1.stack": "Node.js, TypeScript, Express.js, Docker, Swagger",
-  "projects.1.desc": "Desenvolvimento do back-end de uma aplicação para as empresas Bayer, Cooxupé e Quanticum, com APIs documentadas via Swagger e conteinerização com Docker. Projeto ágil em equipe.",
-  "projects.1.details": "Desenhei e implementei um conjunto de endpoints REST para um sistema corporativo multiempresas (Bayer, Cooxupé, Quanticum). Atuei em modelagem de domínio, autenticação e autorização (acesso baseado em papéis), paginação e filtros, validação de entrada, padronização de erros e versionamento da API. Documentei com OpenAPI/Swagger e conteinerizei ambientes local/dev com Docker Compose. Colaborei em time ágil (planejamento, reviews, code review) e garanti qualidade de release com entregas incrementais e refatorações.",
+  "projects.1.desc": "Arquitetura e desenvolvimento do back-end de sistema corporativo multi-tenant. Implementei APIs REST robustas com autenticação, autorização e documentação completa via Swagger/OpenAPI para grandes empresas.",
+  "projects.1.details": "Liderei o design e implementação de endpoints REST em nível de produção para plataforma corporativa multi-tenant servindo Bayer, Cooxupé e Quanticum. Arquitetei modelos de domínio com lógica de negócio complexa, implementei controle de acesso baseado em papéis (RBAC), desenvolvi mecanismos sofisticados de paginação e filtros, e enforçai validação rigorosa de entrada com tratamento padronizado de erros. Mantive versionamento de API para compatibilidade retroativa e documentei todos os endpoints usando especificações OpenAPI/Swagger. Conteinerizei ambientes de desenvolvimento e produção com Docker Compose e estabeleci pipelines de deployment clara. Participei ativamente de cerimônias ágeis (planejamento, refinamento, retrospectivas) e realizei code reviews minuciosos, garantindo qualidade do código e compartilhamento de conhecimento entre os times.",
 
   "projects.2.title": "Aplicativo em Flutter – NNT",
   "projects.2.role": "Desenvolvedor Mobile (2023)",
   "projects.2.stack": "Flutter, Firebase",
-  "projects.2.desc": "Participei do desenvolvimento de um aplicativo mobile desde a ideia inicial até o MVP, usando Flutter e Firebase. Aplicação construída em equipe com metodologia ágil.",
-  "projects.2.details": "Implementei funcionalidades do zero até o MVP em um app Flutter. Criei telas, navegação e gerenciamento de estado, integrei Firebase Authentication e Cloud Firestore, e cuidei de validação de formulários e estados de erro. Foquei em UX (feedback de carregamento, empty states) e performance em dispositivos modestos. Participei das cerimônias ágeis e colaborei de perto com design e back-end.",
+  "projects.2.desc": "Desenvolvimento mobile completo de conceito ao MVP. Engenhei aplicativo iOS/Android em Flutter com backend Firebase, priorizando experiência do usuário e otimização de performance.",
+  "projects.2.details": "Arquitetei e implementei features mobile completas abrangendo desde requisitos até MVP em produção. Desenhei telas UI intuitivas com fluxo de navegação suave e implementei padrões avançados de gerenciamento de estado. Integrei Firebase Authentication para autenticação segura e Cloud Firestore para sincronização de dados em tempo real. Implementei validação comprehensive de formulários com tratamento pensado de erros e mecanismos de feedback ao usuário. Priorizei melhorias de UX (estados de carregamento, empty states, skeleton screens) e otimizei performance da app especificamente para dispositivos de menor capacidade através de gerenciamento cuidadoso de memória e algoritmos eficientes. Colaborei cross-funcional com designers e desenvolvedores backend, participando de standups diárias, planejamento de sprints e reviews de design.",
 
   "projects.3.title": "Sistema Front-End – Embrapii/IFSMG",
   "projects.3.role": "Desenvolvedor Full-Stack (2024)",
   "projects.3.stack": "React.js",
-  "projects.3.desc": "Desenvolvimento do front-end de um sistema web utilizando React com foco em componentização e reutilização de código. Trabalho realizado em equipe com entregas constantes.",
-  "projects.3.details": "Desenvolvi um front-end em React com componentes reutilizáveis e layout responsivo. Integrei com APIs de back-end, implementei formulários com validação no cliente e inputs controlados, e dei atenção à acessibilidade (semântica, navegação por teclado) e performance (code splitting, memoization). Contribuí na definição de estrutura de componentes e convenções de estilo para acelerar entregas e facilitar manutenção.",
+  "projects.3.desc": "Arquitetura e desenvolvimento de frontend para sistema web empresarial em React. Construí biblioteca de componentes escalável com ênfase em reusabilidade, acessibilidade e otimização de performance.",
+  "projects.3.details": "Arquitetei e desenvolvi frontend robusto para sistema web empresarial em React seguindo best practices modernas. Construí biblioteca comprehensive de componentes reutilizáveis, bem documentados com styling consistente e comportamento previsível. Implementei formulários complexos com validação client-side em tempo real, inputs controlados e mecanismos de recuperação de erros. Integrei seamlessly com APIs REST backend usando estratégias otimizadas de data fetching e padrões de caching. Priorizei acessibilidade web garantindo HTML semântico, labels ARIA apropriados, suporte a navegação por teclado e conformidade WCAG. Apliquei técnicas de otimização de performance incluindo code splitting, lazy loading, component memoization e monitoramento de tamanho de bundle. Estabeleci e documentei padrões de estrutura de componentes, convenções de styling (CSS-in-JS/Tailwind) e guidelines de desenvolvimento para acelerar velocidade do time e garantir consistência de código.",
 
   "highlighted.title": "Projetos em Destaque",
 
