@@ -10,43 +10,57 @@ export default function Contact({ messages }: Props) {
   return (
     <section
       id="contact"
-      className="max-w-4xl mx-auto px-4 sm:px-8 py-16 flex flex-col items-center gap-6 mt-20"
+      className="py-16 md:py-20 px-4 bg-slate-900 dark:bg-slate-950 text-white"
     >
-      <h2 className="text-3xl font-bold text-center">
-        {messages['contact.title']}
-      </h2>
-      <p className="text-center text-muted max-w-xl">
-        {messages['contact.description']}
-      </p>
+      <div className="max-w-4xl mx-auto">
+        <h2 className="text-4xl md:text-5xl font-bold text-center mb-6">
+          {messages['contact.title']}
+        </h2>
+        
+        <p className="text-lg text-gray-300 text-center mb-12 max-w-2xl mx-auto">
+          {messages['contact.description']}
+        </p>
 
-      <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-4">
-        <a
-          href="mailto:renan.costa2098@gmail.com"
-          className="flex items-center gap-2 text-muted hover:text-foreground hover:underline"
-        >
-          <Mail className="w-5 h-5" />
-          renan.costa2098@gmail.com
-        </a>
+        {/* Contact Methods */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+          <a
+            href={`mailto:${messages['contact.email']}`}
+            className="group p-6 bg-slate-800 hover:bg-blue-600 rounded-lg transition-all duration-300 transform hover:scale-105 text-center"
+          >
+            <Mail className="w-8 h-8 mx-auto mb-3 group-hover:text-white" />
+            <p className="font-semibold mb-1">Email</p>
+            <p className="text-sm text-gray-300 group-hover:text-white">{messages['contact.email']}</p>
+          </a>
 
-        <a
-          href="https://github.com/renanzitoo"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center gap-2 text-muted hover:text-foreground hover:underline"
-        >
-          <Github className="w-5 h-5" />
-          github.com/renanzitoo
-        </a>
+          <a
+            href={messages['contact.github']}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group p-6 bg-slate-800 hover:bg-blue-600 rounded-lg transition-all duration-300 transform hover:scale-105 text-center"
+          >
+            <Github className="w-8 h-8 mx-auto mb-3 group-hover:text-white" />
+            <p className="font-semibold mb-1">GitHub</p>
+            <p className="text-sm text-gray-300 group-hover:text-white">@renanzitoo</p>
+          </a>
 
-        <a
-          href="https://www.linkedin.com/in/renanzitoo/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center gap-2 text-muted hover:text-foreground hover:underline"
-        >
-          <Linkedin className="w-5 h-5" />
-          linkedin.com/in/renanzitoo
-        </a>
+          <a
+            href={messages['contact.linkedin']}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group p-6 bg-slate-800 hover:bg-blue-600 rounded-lg transition-all duration-300 transform hover:scale-105 text-center"
+          >
+            <Linkedin className="w-8 h-8 mx-auto mb-3 group-hover:text-white" />
+            <p className="font-semibold mb-1">LinkedIn</p>
+            <p className="text-sm text-gray-300 group-hover:text-white">@renanzitoo</p>
+          </a>
+        </div>
+
+        {/* Footer */}
+        <div className="text-center pt-8 border-t border-slate-700">
+          <p className="text-sm text-gray-400">
+            © 2024 Renan Costa. Built with React, Next.js & TypeScript.
+          </p>
+        </div>
       </div>
     </section>
   );

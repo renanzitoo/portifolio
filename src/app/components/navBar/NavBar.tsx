@@ -8,26 +8,53 @@ interface NavBarProps {
 
 export const NavBar = ({ lang }: NavBarProps) => {
   return (
-    <div className="flex flex-col items-center justify-between gap-4 p-4 border-b border-gray-300 w-full">
-      <div className="flex items-center justify-between w-full max-w-4xl">
-        <h1 className="text-lg font-semibold">
-          {lang === 'pt-BR' ? 'Renan Costa - Engenheiro de Computação' : 'Renan Costa - Computer Engineering'}
-        </h1>
+    <nav className="sticky top-0 z-40 w-full bg-white/95 dark:bg-slate-900/95 backdrop-blur-sm border-b border-gray-200 dark:border-slate-700 shadow-sm">
+      <div className="flex items-center justify-between px-4 sm:px-8 lg:px-12 py-4 max-w-full">
+        {/* Logo */}
+        <a href="#" className="text-lg font-bold text-slate-900 dark:text-white hover:text-blue-600 transition-colors">
+          {lang === 'pt-BR' ? 'RC' : 'RC'}
+        </a>
 
-        <div className="flex items-center gap-6">
-          <a href="#about" className="text-blue-500 hover:underline">
-            {lang === 'pt-BR' ? 'Sobre' : 'About'}
+        {/* Links */}
+        <div className="hidden md:flex items-center gap-8">
+          <a 
+            href="#what-i-build" 
+            className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors"
+          >
+            {lang === 'pt-BR' ? 'O que Construo' : 'What I Build'}
           </a>
-          <a href="#projects" className="text-blue-500 hover:underline">
+          <a 
+            href="#projects" 
+            className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors"
+          >
             {lang === 'pt-BR' ? 'Projetos' : 'Projects'}
           </a>
-          <a href="#contact" className="text-blue-500 hover:underline">
+          <a 
+            href="#current-focus" 
+            className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors"
+          >
+            {lang === 'pt-BR' ? 'Foco Atual' : 'Focus'}
+          </a>
+          <a 
+            href="#contact" 
+            className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition-colors"
+          >
             {lang === 'pt-BR' ? 'Contato' : 'Contact'}
           </a>
-
-          <LanguageSwitcher />
         </div>
+
+        {/* Language Switcher */}
+        <LanguageSwitcher />
       </div>
-    </div>
+
+      {/* Mobile Menu */}
+      <style jsx>{`
+        @media (max-width: 768px) {
+          nav {
+            padding: 0;
+          }
+        }
+      `}</style>
+    </nav>
   );
 };
