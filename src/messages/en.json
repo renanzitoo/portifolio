@@ -8,11 +8,6 @@
   "about.title": "Profile",
   "about": "Computer Engineering student and developer with a track record of shipping production-grade applications. From real-time sales intelligence dashboards to AgTech geospatial systems, I focus on performance, reliability, and business impact. Currently researching ML-based fraud detection for smart contracts.",
 
-  "nav-title": "Renan Costa",
-  "nav-about": "Profile",
-  "nav-projects": "Work",
-  "nav-contact": "Contact",
-
   "projects.title": "Selected Work",
   "projects.1.title": "Conversational AI & Sales Intel",
   "projects.1.context": "Full-Stack Engineer • 2025 - Present",
