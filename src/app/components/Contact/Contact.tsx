@@ -1,65 +1,46 @@
 'use client';
 
-import { Mail, Github, Linkedin } from 'lucide-react';
-
-interface Props {
+interface ContactProps {
   messages: Record<string, string>;
 }
 
-export default function Contact({ messages }: Props) {
+export default function Contact({ messages }: ContactProps) {
   return (
-    <section
-      id="contact"
-      className="py-16 md:py-20 px-4 bg-slate-900 dark:bg-slate-950 text-white"
-    >
-      <div className="max-w-4xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-6">
+    <section id="contact" className="px-6 md:px-12 max-w-6xl mx-auto section-padding border-t border-border mb-20">
+      <div className="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-8">
+        <h2 className="text-sm uppercase tracking-[0.2em] text-muted/50 font-semibold">
           {messages['contact.title']}
         </h2>
         
-        <p className="text-lg text-gray-300 text-center mb-12 max-w-2xl mx-auto">
-          {messages['contact.description']}
-        </p>
-
-        {/* Contact Methods */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-          <a
-            href={`mailto:${messages['contact.email']}`}
-            className="group p-6 bg-slate-800 hover:bg-blue-600 rounded-lg transition-all duration-300 transform hover:scale-105 text-center"
-          >
-            <Mail className="w-8 h-8 mx-auto mb-3 group-hover:text-white" />
-            <p className="font-semibold mb-1">Email</p>
-            <p className="text-sm text-gray-300 group-hover:text-white">{messages['contact.email']}</p>
-          </a>
-
-          <a
-            href={messages['contact.github']}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group p-6 bg-slate-800 hover:bg-blue-600 rounded-lg transition-all duration-300 transform hover:scale-105 text-center"
-          >
-            <Github className="w-8 h-8 mx-auto mb-3 group-hover:text-white" />
-            <p className="font-semibold mb-1">GitHub</p>
-            <p className="text-sm text-gray-300 group-hover:text-white">@renanzitoo</p>
-          </a>
-
-          <a
-            href={messages['contact.linkedin']}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group p-6 bg-slate-800 hover:bg-blue-600 rounded-lg transition-all duration-300 transform hover:scale-105 text-center"
-          >
-            <Linkedin className="w-8 h-8 mx-auto mb-3 group-hover:text-white" />
-            <p className="font-semibold mb-1">LinkedIn</p>
-            <p className="text-sm text-gray-300 group-hover:text-white">@renanzitoo</p>
-          </a>
-        </div>
-
-        {/* Footer */}
-        <div className="text-center pt-8 border-t border-slate-700">
-          <p className="text-sm text-gray-400">
-            © 2024 Renan Costa. Built with React, Next.js & TypeScript.
+        <div className="space-y-12">
+          <p className="text-3xl md:text-5xl font-bold tracking-tight text-white max-w-xl">
+            {messages['contact.description']}
           </p>
+          
+          <div className="flex flex-col sm:flex-row gap-8 sm:gap-16">
+            <a 
+              href={`mailto:${messages['contact.email'] === 'Email' ? 'renanzitoo@gmail.com' : messages['contact.email']}`}
+              className="text-lg font-medium border-b border-muted/20 hover:border-white pb-1"
+            >
+              {messages['contact.email']}
+            </a>
+            <a 
+              href="https://linkedin.com/in/renanzitoo" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-lg font-medium border-b border-muted/20 hover:border-white pb-1"
+            >
+              {messages['contact.linkedin']}
+            </a>
+            <a 
+              href="https://github.com/renanzitoo" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-lg font-medium border-b border-muted/20 hover:border-white pb-1"
+            >
+              {messages['contact.github']}
+            </a>
+          </div>
         </div>
       </div>
     </section>

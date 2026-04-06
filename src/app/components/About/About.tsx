@@ -1,24 +1,22 @@
-// components/About/About.tsx
-import { getMessages } from '@/lib/i18n';
+'use client';
 
 interface AboutProps {
- messages: Record<string, string>;
+  messages: Record<string, string>;
 }
 
-export default async function About({ messages }: AboutProps) {
-
+export default function About({ messages }: AboutProps) {
   return (
-    <div className="flex flex-col items-center justify-center gap-4 mt-8" id="about">
-      <h1 className="text-3xl font-bold">{messages['about.title']}</h1>
-      <p className="text-lg">{messages['about']}</p>
-      {/*<p className="text-lg">{messages['about.description1']}</p>
-      <p className="text-lg">{messages['about.description2']}</p>*/}
-      <img
-        src="profile.jpeg"
-        alt="Foto de perfil"
-        className="w-64 h-64 rounded-full object-cover shadow-lg border-4 border-white"
-      />
-
-    </div>
+    <section id="about" className="px-6 md:px-12 max-w-6xl mx-auto section-padding border-t border-border">
+      <div className="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-8">
+        <h2 className="text-sm uppercase tracking-[0.2em] text-muted/50 font-semibold">
+          {messages['about.title']}
+        </h2>
+        <div className="max-w-xl">
+          <p className="text-xl md:text-2xl text-muted leading-relaxed">
+            {messages['about']}
+          </p>
+        </div>
+      </div>
+    </section>
   );
 }
