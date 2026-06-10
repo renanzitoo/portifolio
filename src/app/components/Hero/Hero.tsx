@@ -1,5 +1,6 @@
 'use client';
 
+import { usePathname } from 'next/navigation';
 import LanguageSwitcher from '../LanguageSwitch/LanguageSwitcher';
 
 interface HeroProps {
@@ -7,6 +8,9 @@ interface HeroProps {
 }
 
 export default function Hero({ messages }: HeroProps) {
+  const pathname = usePathname();
+  const currentLocale = pathname.split('/')[1] === 'pt-BR' ? 'pt-BR' : 'en';
+
   return (
     <section className="min-h-screen flex flex-col justify-center px-6 md:px-12 max-w-6xl mx-auto section-padding relative">
       <div className="absolute top-12 right-6 md:right-12">
@@ -33,6 +37,12 @@ export default function Hero({ messages }: HeroProps) {
             className="text-lg font-medium hover:text-muted underline underline-offset-8 decoration-1"
           >
             {messages['hero.cta.primary']}
+          </a>
+          <a
+            href={`/${currentLocale}/blog`}
+            className="text-lg font-medium hover:text-muted underline underline-offset-8 decoration-1"
+          >
+            {messages['hero.cta.blog']}
           </a>
           <a
             href="#contact"
