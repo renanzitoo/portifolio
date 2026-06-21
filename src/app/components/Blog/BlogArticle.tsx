@@ -7,6 +7,55 @@ type BlogArticleProps = {
   backLabel: string;
 };
 
+function renderContent(text: string) {
+  const regex = /\[([^\]]+)\]\(([^)]+)\)/g;
+  const parts = [];
+  let lastIndex = 0;
+  let match;
+
+  while ((match = regex.exec(text)) !== null) {
+    const matchIndex = match.index;
+    const [_, linkText, url] = match;
+
+    if (matchIndex > lastIndex) {
+      parts.push(text.substring(lastIndex, matchIndex));
+    }
+
+    const isExternal = url.startsWith("http://") || url.startsWith("https://");
+    if (isExternal) {
+      parts.push(
+        <a
+          key={url + matchIndex}
+          href={url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-foreground hover:underline"
+        >
+          {linkText}
+        </a>
+      );
+    } else {
+      parts.push(
+        <Link
+          key={url + matchIndex}
+          href={url}
+          className="text-foreground hover:underline"
+        >
+          {linkText}
+        </Link>
+      );
+    }
+
+    lastIndex = regex.lastIndex;
+  }
+
+  if (lastIndex < text.length) {
+    parts.push(text.substring(lastIndex));
+  }
+
+  return parts.length > 0 ? parts : text;
+}
+
 export default function BlogArticle({ lang, post, backLabel }: BlogArticleProps) {
   return (
     <article className="mx-auto max-w-4xl space-y-12">
@@ -42,7 +91,7 @@ export default function BlogArticle({ lang, post, backLabel }: BlogArticleProps)
       <div className="space-y-8 border-t border-border pt-10">
         {post.content.map((paragraph) => (
           <p key={paragraph} className="text-lg leading-8 text-muted md:text-xl md:leading-9">
-            {paragraph}
+            {renderContent(paragraph)}
           </p>
         ))}
       </div>
