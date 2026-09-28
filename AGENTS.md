@@ -1,38 +1,23 @@
 # AGENTS.md
 
-## Project
+## Project Overview
 
-Personal portfolio and technical blog of Renan Costa.
+This repository contains Renan Costa's personal portfolio and technical blog.
 
-The website is bilingual:
+The project is a bilingual website supporting:
 
-* Portuguese (pt-BR)
-* English (en)
+* Portuguese — `pt-BR`
+* English — `en`
 
-**All user-facing portfolio content must have both language versions.**
-
-This includes:
+The website contains:
 
 * Portfolio pages
 * Projects
-* Project descriptions
-* Articles
-* Article metadata
-* Navigation
-* Buttons
-* Labels
+* Technical articles
+* Professional information
+* Contact information
+* Technical content
 * SEO metadata
-* Titles
-* Descriptions
-* Empty states
-* Error messages
-* Other user-facing text
-
-Never create new user-facing content in only one language.
-
----
-
-# Technology
 
 The project uses:
 
@@ -43,323 +28,769 @@ The project uses:
 * ESLint
 * Vercel
 
-Follow the existing project architecture.
-
-Do not introduce a new framework, routing system, or internationalization architecture unless explicitly requested.
+Always inspect the existing implementation before making assumptions about architecture, routing, localization, article storage, or rendering.
 
 ---
 
-# IMPORTANT — Before Changing Anything
+# 1. Core Principles
 
-Before modifying the project:
+These rules apply to every task.
 
-1. Inspect the existing implementation.
-2. Identify how routing and localization currently work.
-3. Identify where Portuguese and English content are stored.
-4. Inspect existing articles and their rendering logic.
-5. Follow the existing conventions.
-6. Only then implement the requested change.
+* Make the smallest change necessary.
+* Preserve the existing architecture.
+* Preserve the existing visual identity.
+* Reuse existing components and utilities.
+* Do not refactor unrelated code.
+* Do not introduce unnecessary dependencies.
+* Do not create duplicate systems.
+* Do not change working behavior without a reason.
+* Do not invent information.
+* Do not modify unrelated files.
+* Prefer simple, maintainable solutions.
+* Follow existing project conventions before introducing new patterns.
 
-Do not assume the project structure.
+When uncertain, inspect the existing implementation first.
 
 ---
 
-# Language / Internationalization
+# 2. Scope Control
 
-## Supported Languages
+Before changing anything:
 
-The portfolio supports:
+1. Understand the exact request.
+2. Identify the files directly related to the task.
+3. Inspect those files.
+4. Identify the root cause or required implementation.
+5. Make the smallest change that satisfies the request.
+6. Validate the result.
+7. Stop.
+
+Do not scan the entire repository unless the task genuinely requires it.
+
+Do not modify files merely because they could be improved.
+
+Do not perform unrelated cleanup.
+
+Do not refactor code that is not part of the requested task.
+
+If another file becomes necessary, inspect it only when there is evidence that it is relevant.
+
+---
+
+# 3. Anti-Loop Rules
+
+These rules are especially important.
+
+The agent must avoid unnecessary autonomous iteration.
+
+## Never:
+
+* repeatedly try random solutions;
+* rewrite the same component multiple times;
+* refactor after the problem is solved;
+* modify unrelated files;
+* repeatedly run the same command without analyzing its output;
+* install dependencies without a clear reason;
+* change architecture unnecessarily;
+* continue improving the project after the requested task is complete;
+* fix unrelated problems discovered during the task.
+
+## If a solution fails:
+
+1. Read the actual error.
+2. Determine the cause.
+3. Make one evidence-based correction.
+4. Validate again.
+
+Do not enter an endless trial-and-error loop.
+
+## Stop condition
+
+If:
+
+* the requested behavior works;
+* the relevant validation passes;
+* there are no errors directly related to the task;
+
+**STOP.**
+
+Do not continue making improvements.
+
+If an unrelated issue is discovered, report it instead of fixing it automatically.
+
+---
+
+# 4. Existing Architecture
+
+Before implementing anything, inspect the existing project structure.
+
+Do not assume:
+
+* where routes are stored;
+* where articles are stored;
+* how localization works;
+* how Markdown is processed;
+* how metadata is generated;
+* how projects are represented;
+* how components are organized.
+
+Follow the architecture that already exists.
+
+Do not create a new architecture when an existing one already solves the problem.
+
+---
+
+# 5. Next.js Rules
+
+* Follow the existing Next.js architecture.
+* Preserve the current routing system.
+* Preserve the current rendering strategy.
+* Respect Server Components and Client Components.
+* Do not add `"use client"` unless necessary.
+* Do not convert Server Components into Client Components unnecessarily.
+* Use existing Next.js conventions.
+* Preserve existing metadata behavior.
+* Preserve existing SEO configuration.
+* Do not introduce another routing system.
+* Do not introduce another framework.
+
+When modifying a page, inspect its existing implementation before changing it.
+
+---
+
+# 6. React Rules
+
+* Use functional components.
+* Reuse existing components whenever possible.
+* Avoid unnecessary state.
+* Avoid unnecessary `useEffect`.
+* Avoid duplicating logic.
+* Keep components focused.
+* Preserve existing component APIs.
+* Do not create a new component if a small modification to an existing component is sufficient.
+* Do not refactor components unrelated to the request.
+
+---
+
+# 7. TypeScript Rules
+
+* Keep TypeScript type-safe.
+* Avoid `any` unless there is a justified reason.
+* Prefer existing types and interfaces.
+* Do not duplicate type definitions unnecessarily.
+* Preserve existing public interfaces.
+* Do not weaken types simply to make an error disappear.
+* Fix the underlying type problem instead.
+
+---
+
+# 8. UI / Design Rules
+
+The portfolio should remain professional, clean, and technically focused.
+
+When modifying the UI:
+
+* Preserve the existing visual identity.
+* Preserve existing typography.
+* Preserve existing colors.
+* Preserve existing spacing.
+* Preserve existing responsive behavior.
+* Preserve existing animations unless modification is requested.
+* Reuse existing components.
+* Reuse existing styles.
+* Do not redesign unrelated sections.
+* Do not introduce a new design system unnecessarily.
+* Do not add excessive animations.
+* Do not add decorative elements without a purpose.
+
+Changes should work on:
+
+* desktop;
+* tablet;
+* mobile.
+
+---
+
+# 9. Accessibility
+
+When modifying UI:
+
+* Use semantic HTML.
+* Preserve keyboard accessibility.
+* Use meaningful labels.
+* Use accessible buttons and links.
+* Preserve existing accessibility attributes.
+* Add meaningful `alt` text where appropriate.
+* Do not remove accessibility behavior without a reason.
+
+---
+
+# 10. Performance
+
+Avoid unnecessary client-side work.
+
+Prefer:
+
+* Server Components when appropriate;
+* static rendering when appropriate;
+* optimized images;
+* existing caching strategies;
+* existing utilities.
+
+Avoid:
+
+* unnecessary API calls;
+* unnecessary client-side state;
+* unnecessary polling;
+* unnecessary dependencies;
+* duplicated data fetching.
+
+Do not optimize unrelated code during a normal feature or bug-fix task.
+
+---
+
+# 11. Internationalization
+
+The portfolio is bilingual.
+
+Supported languages:
 
 ```text
 pt-BR
 en
 ```
 
-Portuguese is the Brazilian Portuguese version.
+All new user-facing content must have both language versions unless the user explicitly requests otherwise.
 
-English should use natural professional English suitable for an international software engineering portfolio.
+This includes:
 
-Do not perform literal word-for-word translations when they produce unnatural English.
+* navigation;
+* buttons;
+* labels;
+* project descriptions;
+* project titles;
+* article titles;
+* article descriptions;
+* articles;
+* metadata;
+* SEO descriptions;
+* empty states;
+* error messages;
+* headings;
+* calls to action;
+* other visible text.
 
-Technical terms such as:
+Do not create new user-facing content in only one language.
+
+---
+
+# 12. Language Quality
+
+## Portuguese
+
+Use natural Brazilian Portuguese.
+
+Do not use awkward literal translations.
+
+## English
+
+Use natural professional technical English.
+
+Do not translate word-for-word when doing so produces unnatural English.
+
+Technical terms should retain their standard terminology.
+
+Examples:
 
 * React
 * Next.js
+* TypeScript
 * Apache Spark
 * dbt
-* Apache Iceberg
 * Docker
 * Kubernetes
 * Machine Learning
 * Data Engineering
+* Data Lakehouse
 
-must remain in their standard technical form.
+Do not translate technical library/framework names.
 
 ---
 
-# Bilingual Content Rule
+# 13. Existing Localization System
 
-Whenever new content is created:
+Before modifying or creating localized content:
 
-### Portuguese version
+1. Inspect how the existing project handles languages.
+2. Identify the current route structure.
+3. Identify where translations are stored.
+4. Identify how language-specific metadata works.
+5. Follow the existing system.
 
-Create the complete pt-BR version.
+Do not invent a new i18n implementation.
 
-### English version
+Do not replace the existing localization architecture unless explicitly requested.
 
-Create the complete English equivalent.
+---
 
-Both versions must contain the same:
+# 14. Content Integrity
 
-* information;
-* technical meaning;
-* sections;
-* code examples;
-* links;
-* references;
-* images;
-* project information.
+The portfolio represents Renan Costa professionally.
 
-The language may be adapted naturally, but technical meaning must remain equivalent.
+Never fabricate:
 
-Do not create:
+* work experience;
+* companies;
+* clients;
+* projects;
+* job positions;
+* certifications;
+* academic achievements;
+* technologies;
+* metrics;
+* performance results;
+* revenue;
+* user counts;
+* project impact;
+* production usage;
+* benchmarks.
+
+Use only information that is:
+
+* provided by the user;
+* present in the project;
+* verifiable from the relevant source;
+* explicitly requested as fictional/example content.
+
+If information is missing, do not invent it.
+
+---
+
+# 15. Articles / Technical Blog
+
+The portfolio contains technical articles.
+
+Articles are bilingual:
+
+* Portuguese
+* English
+
+Every published article should have both language versions.
+
+However, the user normally prepares the article content as Markdown before asking the agent to integrate it into the portfolio.
+
+Therefore:
+
+**The Markdown is the source of truth for article content.**
+
+The website is responsible for presenting and delivering that content.
+
+---
+
+# 16. Markdown Source of Truth
+
+When the user provides or creates a Markdown file:
 
 ```text
-Portuguese article only
+article.md
 ```
 
-or:
-
-```text
-English article only
-```
-
-unless the user explicitly requests a single-language artifact.
-
----
-
-# Articles
-
-The repository contains technical articles.
-
-Existing examples include:
-
-* `artigo.md`
-* `data-engineering.md`
-
-Before creating an article:
-
-1. Inspect the existing article structure.
-2. Inspect how articles are routed/rendered.
-3. Inspect how language selection is implemented.
-4. Determine where the pt-BR and English versions belong.
-5. Follow the existing implementation.
-6. Create both language versions.
-
-Do not invent a new article architecture if the project already has one.
-
----
-
-# Creating a New Article
-
-When the user asks:
-
-> Create an article about X
+treat it as the source of truth.
 
 The agent must:
 
-### Step 1 — Understand the topic
+* read the Markdown;
+* preserve its structure;
+* preserve its content;
+* preserve headings;
+* preserve code blocks;
+* preserve links;
+* preserve tables;
+* preserve references;
+* preserve images;
+* preserve technical terminology;
+* preserve section order.
 
-Determine:
+Do not rewrite the article merely because it is being integrated into the website.
 
-* subject;
-* target audience;
-* technical depth;
-* project being discussed;
-* technologies involved.
+Do not expand the article.
 
-### Step 2 — Inspect the project
+Do not summarize it.
 
-If the article describes one of Renan's projects:
+Do not replace its wording.
 
-* inspect the relevant repository when available;
-* inspect the actual implementation;
-* verify technologies;
-* verify architecture;
-* verify commands;
-* verify configuration;
-* verify metrics.
+Do not add sections unnecessarily.
 
-Never invent implementation details.
-
-### Step 3 — Inspect existing articles
-
-Use existing articles as the style and structural reference.
-
-Do not blindly copy their content.
-
-### Step 4 — Write Portuguese
-
-Create the complete pt-BR article.
-
-### Step 5 — Write English
-
-Create the complete English article.
-
-The English version should be a technically faithful adaptation, not a literal machine translation.
-
-### Step 6 — Integrate
-
-Connect both versions to the existing article system.
-
-### Step 7 — Validate
-
-Verify:
-
-* both languages load;
-* links work;
-* code blocks render;
-* Markdown renders correctly;
-* metadata is correct;
-* article navigation works;
-* the build passes.
+Only modify the Markdown when the user explicitly asks for content changes.
 
 ---
 
-# Article Structure
+# 17. Article Workflow
+
+When the user asks to add a Markdown article to the portfolio:
+
+## Step 1 — Read
+
+Read the entire Markdown source.
+
+## Step 2 — Inspect
+
+Inspect:
+
+* existing articles;
+* article routing;
+* Markdown rendering;
+* frontmatter;
+* metadata;
+* localization;
+* article components.
+
+## Step 3 — Identify
+
+Determine how the existing system expects an article to be integrated.
+
+## Step 4 — Integrate
+
+Integrate the Markdown using the existing architecture.
+
+## Step 5 — Language
+
+Ensure the required Portuguese and English versions exist according to the user's request and the project's existing workflow.
+
+## Step 6 — Metadata
+
+Configure required metadata.
+
+## Step 7 — Validate
+
+Verify rendering and build.
+
+## Step 8 — Stop
+
+Once the article works, stop.
+
+---
+
+# 18. Adding an Existing Markdown Article
+
+If the user says:
+
+> Add `data-engineering.md` to the portfolio.
+
+The expected behavior is:
+
+```text
+Read Markdown
+    ↓
+Inspect existing article system
+    ↓
+Identify correct integration point
+    ↓
+Integrate article
+    ↓
+Configure language
+    ↓
+Configure metadata
+    ↓
+Validate
+    ↓
+STOP
+```
+
+Do not rewrite the article.
+
+---
+
+# 19. Translating an Article
+
+If the user says:
+
+> Create the English version of this article.
+
+Then:
+
+1. Read the original Markdown.
+2. Translate the content into natural technical English.
+3. Preserve Markdown structure.
+4. Preserve code.
+5. Preserve links.
+6. Preserve tables.
+7. Preserve references.
+8. Preserve technical meaning.
+9. Create the corresponding English Markdown.
+10. Integrate it if requested.
+11. Validate.
+
+Do not modify the original language version unless explicitly requested.
+
+---
+
+# 20. Creating an Article From Scratch
+
+If the user explicitly asks:
+
+> Create an article about X.
+
+and no Markdown source is provided:
+
+1. Inspect existing articles.
+2. Follow their structure.
+3. Follow their technical depth.
+4. Determine the actual topic.
+5. Use only verified information.
+6. Create the requested language version.
+7. Create the second language version when required.
+8. Integrate both into the existing system.
+9. Validate.
+
+Do not fabricate project-specific implementation details.
+
+If the article concerns one of the user's projects, inspect the relevant project when possible.
+
+---
+
+# 21. Article Editing
+
+Interpret article requests carefully.
+
+### "Add this article"
+
+Integrate the Markdown.
+
+Do not rewrite it.
+
+### "Improve this article"
+
+Edit the Markdown content.
+
+Improve:
+
+* clarity;
+* organization;
+* technical explanation;
+* grammar;
+* readability.
+
+Preserve factual meaning.
+
+### "Translate this article"
+
+Create the requested language version.
+
+### "Fix article rendering"
+
+Fix the website implementation.
+
+Do not rewrite the article content unless the rendering issue requires it.
+
+### "Redesign the article page"
+
+Modify the UI while preserving article content.
+
+---
+
+# 22. Article Structure
 
 Follow the structure of existing articles.
 
-When appropriate, an article should contain:
+Do not impose a generic structure if the existing article already has one.
+
+When creating a new article from scratch, a reasonable structure is:
 
 ```md
 # Title
 
-Short introduction.
+Introduction
 
-## Introduction / Context
+## Context
 
-Explain the problem.
+## Problem
 
 ## Architecture
 
-Explain the architecture.
-
 ## Implementation
-
-Explain the implementation.
 
 ## Technical Details
 
-Explain important engineering decisions.
-
 ## Validation
-
-Explain testing or validation.
 
 ## Trade-offs
 
-Explain limitations and alternatives.
-
 ## Conclusion
 
-Summarize the main lessons.
-
 ## References
-
-Official documentation and relevant references.
 ```
 
-Do not force every section when it does not make sense.
-
-The existing article structure always takes precedence.
+Only use sections that make sense.
 
 ---
 
-# Article Writing Style
+# 23. Article Writing Style
 
-Articles are technical portfolio content.
-
-They should demonstrate:
+Technical articles should demonstrate:
 
 * engineering reasoning;
-* understanding of architecture;
 * practical implementation;
-* technical decision-making;
-* awareness of trade-offs.
+* technical understanding;
+* architectural decisions;
+* trade-offs.
 
 Prefer:
 
-> Problem → Context → Decision → Implementation → Result → Trade-offs
+```text
+Problem
+→ Context
+→ Decision
+→ Implementation
+→ Validation
+→ Trade-offs
+→ Conclusion
+```
 
-Avoid generic AI-generated introductions such as:
+Avoid:
+
+* generic AI introductions;
+* excessive filler;
+* repetitive explanations;
+* clickbait;
+* exaggerated marketing;
+* unsupported claims.
+
+Avoid phrases such as:
 
 > "In today's rapidly evolving technological landscape..."
 
-Avoid excessive marketing language.
-
-Avoid clickbait.
-
-Avoid exaggerated claims.
-
-Do not claim something is:
-
-* production-ready;
-* scalable;
-* enterprise-grade;
-* highly performant;
-* fault tolerant;
-
-unless the implementation actually supports that claim.
+unless genuinely appropriate.
 
 ---
 
-# Technical Accuracy
+# 24. Technical Accuracy in Articles
 
 Never fabricate:
 
 * benchmarks;
-* performance numbers;
-* cloud costs;
 * throughput;
 * latency;
+* costs;
 * dataset sizes;
 * user counts;
+* performance metrics;
 * infrastructure specifications;
-* production usage;
-* business results.
+* production results.
 
-If a number exists in the actual project, verify it before using it.
+If a number is used, verify it.
 
-If something is an assumption, clearly identify it as an assumption.
+If it is an estimate, clearly identify it as an estimate.
+
+If it is an experiment, identify it as an experiment.
 
 ---
 
-# Code Examples in Articles
+# 25. Code Examples in Articles
 
-Code examples must:
+Code must:
 
-* match the actual technology;
 * use valid syntax;
-* be relevant to the explanation;
+* match the described technology;
+* be relevant;
 * avoid unnecessary boilerplate;
-* use correct language identifiers.
+* use correct Markdown code fences.
 
-Example:
+Do not invent APIs.
 
-```ts
-const result = await processData(input);
-```
-
-Do not invent APIs or functions that do not exist in the described implementation.
+Do not show functions or libraries that do not exist in the described implementation.
 
 When simplifying code for educational purposes, make it clear that the example is simplified.
 
 ---
 
-# Data Engineering Articles
+# 26. Article SEO
 
-When writing Data Engineering articles, explain engineering decisions around:
+When the existing architecture supports article metadata, configure metadata for both languages.
+
+Possible metadata:
+
+* title;
+* description;
+* slug;
+* date;
+* tags;
+* canonical URL;
+* Open Graph metadata.
+
+Follow the existing metadata implementation.
+
+Do not create a new metadata system.
+
+Descriptions must accurately represent the article.
+
+Do not keyword-stuff.
+
+---
+
+# 27. Article URLs
+
+Follow the existing URL structure.
+
+Do not invent a new route structure.
+
+Before adding a route:
+
+1. Inspect existing article routes.
+2. Identify the language convention.
+3. Follow the established pattern.
+
+Do not assume a structure such as:
+
+```text
+/en/articles/...
+/pt/articles/...
+```
+
+unless the existing project actually uses it.
+
+---
+
+# 28. Article Assets
+
+If an article references images:
+
+1. Inspect how existing articles reference images.
+2. Follow the existing asset structure.
+3. Verify the asset exists.
+4. Preserve existing references.
+5. Use meaningful alt text when supported.
+
+If an asset is missing:
+
+* report it;
+* do not silently replace it with an unrelated asset.
+
+Do not create placeholder assets unless explicitly requested.
+
+---
+
+# 29. Article References
+
+Preserve references from the Markdown.
+
+When creating an article from scratch:
+
+Prefer authoritative technical sources such as:
+
+* official documentation;
+* project documentation;
+* academic papers;
+* standards;
+* official repositories.
+
+Do not invent references.
+
+---
+
+# 30. Data Engineering Articles
+
+When relevant, Data Engineering articles may discuss:
 
 * ingestion;
 * storage;
@@ -377,22 +808,22 @@ When writing Data Engineering articles, explain engineering decisions around:
 * dbt;
 * DuckDB;
 * orchestration;
-* Airflow;
 * Docker;
 * testing;
 * observability;
 * scalability;
-* performance.
+* performance;
+* cost.
 
-Do not automatically include every technology.
+Only describe technologies actually used or relevant to the project.
 
-Only describe technologies actually relevant to the project.
+Do not add technologies merely because they are common in the industry.
 
 ---
 
-# Machine Learning Articles
+# 31. Machine Learning Articles
 
-When writing ML articles, explain:
+When relevant, ML articles should explain:
 
 * problem definition;
 * dataset;
@@ -404,211 +835,132 @@ When writing ML articles, explain:
 * metrics;
 * limitations.
 
-Do not fabricate evaluation results.
+Do not fabricate model results.
 
 ---
 
-# Software Engineering Articles
+# 32. Software Engineering Articles
 
-When writing software engineering articles, emphasize:
+When relevant, discuss:
 
 * architecture;
 * design decisions;
 * maintainability;
 * testing;
-* trade-offs;
 * scalability;
 * reliability;
+* trade-offs;
 * implementation details.
 
-Explain why a particular approach was chosen instead of simply listing technologies.
+Focus on why decisions were made, not only which technologies were used.
 
 ---
 
-# SEO
+# 33. Projects
 
-Every article must have appropriate metadata in both languages when the existing architecture supports it.
+When adding or editing portfolio projects:
 
-For each language, provide:
+1. Inspect the existing project representation.
+2. Follow its structure.
+3. Use real project information.
+4. Include actual technologies.
+5. Include repository links when available.
+6. Include deployment links when available.
+7. Provide both language versions.
 
-* title;
-* description;
-* slug;
-* relevant tags;
-* canonical URL when supported;
-* Open Graph metadata when supported.
+Project descriptions should communicate:
 
-The English and Portuguese versions should have language-appropriate:
+```text
+Problem
+→ Solution
+→ Architecture
+→ Technologies
+→ Result
+```
 
-* titles;
+Only include sections supported by actual information.
+
+Never fabricate project results.
+
+---
+
+# 34. Project Links
+
+When adding project links:
+
+* use the real repository;
+* use the real deployment;
+* do not invent URLs;
+* preserve existing URLs;
+* verify URLs when possible.
+
+Do not replace a valid project link with a guessed URL.
+
+---
+
+# 35. UI Text
+
+All newly created user-facing text must support both languages.
+
+Do not hardcode a new Portuguese-only or English-only string if the project already has a localization mechanism.
+
+Follow the existing localization implementation.
+
+---
+
+# 36. SEO / Portfolio Pages
+
+When modifying portfolio pages:
+
+Preserve:
+
+* page titles;
 * descriptions;
-* metadata.
+* Open Graph metadata;
+* canonical URLs;
+* structured data;
+* sitemap behavior;
+* robots configuration.
 
-Do not keyword-stuff.
-
-SEO content must accurately describe the article.
-
----
-
-# Article URLs
-
-Follow the existing routing implementation.
-
-Do not invent a new URL structure.
-
-If the project supports localized routes, preserve the established convention.
-
-For example, if the existing project uses:
-
-```text
-/pt/articles/...
-/en/articles/...
-```
-
-continue using that structure.
-
-If the project uses another structure, follow the existing implementation instead.
+Do not remove SEO configuration without a reason.
 
 ---
 
-# Projects
+# 37. Dependencies
 
-When adding or editing a portfolio project:
+Do not add a dependency unless it is necessary.
 
-* inspect the existing project data structure;
-* use real project information;
-* include the actual technologies;
-* include repository links when available;
-* include deployment links when available;
-* provide both pt-BR and English content.
+Before adding a package:
 
-Project descriptions must be equivalent between languages.
+1. Check whether the project already has an equivalent capability.
+2. Check whether existing APIs/components can solve the problem.
+3. Prefer existing dependencies.
 
-Do not fabricate:
-
-* project results;
-* clients;
-* users;
-* revenue;
-* performance;
-* business impact.
+Do not install a package simply for convenience.
 
 ---
 
-# UI Text
+# 38. Git Safety
 
-All new UI text must be bilingual.
-
-Examples:
-
-```text
-PT-BR:
-Leia o artigo
-
-EN:
-Read article
-```
-
-Do not hardcode only one language into a reusable component if the application already has an i18n mechanism.
-
-Follow the existing localization system.
-
----
-
-# Images
-
-When adding images to articles:
-
-1. Inspect how existing articles load images.
-2. Follow the existing asset structure.
-3. Use descriptive filenames.
-4. Add meaningful alt text in both languages when the architecture supports localized alt text.
-5. Do not add decorative images unnecessarily.
-
-Use diagrams when they improve technical understanding.
-
-Useful examples:
-
-* architecture diagrams;
-* data pipelines;
-* system flows;
-* database schemas;
-* infrastructure diagrams.
-
----
-
-# Existing Content
-
-Do not modify existing articles unless explicitly requested.
-
-When creating a new article:
-
-* do not rewrite `artigo.md`;
-* do not rewrite `data-engineering.md`;
-* do not change existing article URLs;
-* do not change existing article content;
-* do not migrate the article system;
-
-unless the task explicitly requires it.
-
----
-
-# Code Changes
-
-## Scope
-
-Only modify files necessary for the requested task.
+Never perform destructive Git operations automatically.
 
 Do not:
 
-* refactor unrelated components;
-* rename unrelated files;
-* change the architecture;
-* replace working libraries;
-* install unnecessary dependencies.
+* create commits unless explicitly requested;
+* push to GitHub unless explicitly requested;
+* reset the repository;
+* revert user changes;
+* discard local changes;
+* delete user files;
+* overwrite unrelated work.
+
+Preserve the user's existing changes.
 
 ---
 
-# Anti-Loop Rules
+# 39. Validation
 
-IMPORTANT.
-
-The agent must stop when the task is complete.
-
-Never:
-
-* repeatedly try random fixes;
-* rewrite the same component multiple times;
-* refactor after a successful solution;
-* modify unrelated files;
-* repeatedly run the same command;
-* install dependencies without necessity;
-* continue "improving" the project after the requested task is solved.
-
-If the requested behavior works and validation passes:
-
-**STOP.**
-
-If an unrelated problem is discovered:
-
-**REPORT IT.**
-
-Do not fix it automatically.
-
-If a solution fails:
-
-1. inspect the actual error;
-2. identify the cause;
-3. make one evidence-based correction;
-4. validate again.
-
-Do not enter an endless trial-and-error loop.
-
----
-
-# Validation
-
-Use the existing project scripts.
+Use the project's existing scripts.
 
 Prefer:
 
@@ -617,62 +969,112 @@ npm run lint
 npm run build
 ```
 
-For article changes, additionally verify:
+Only run commands relevant to the task.
 
-* Portuguese article;
+For article changes, verify when applicable:
+
+* PT-BR article;
 * English article;
 * routing;
 * metadata;
 * Markdown rendering;
+* code blocks;
+* tables;
 * images;
-* links.
+* links;
+* responsive behavior;
+* build.
 
-Only run relevant validation commands.
-
----
-
-# Git Safety
-
-Never:
-
-* commit without explicit permission;
-* push without explicit permission;
-* reset the repository;
-* revert user changes;
-* delete user work;
-* overwrite unrelated changes.
+Do not repeatedly run the same command without analyzing the result.
 
 ---
 
-# Task Completion
+# 40. Error Handling
 
-When the task is complete, report:
+When validation fails:
 
-1. Files changed.
-2. What was implemented.
-3. Portuguese version status.
-4. English version status.
-5. Validation performed.
-6. Any remaining issue.
+1. Read the complete relevant error.
+2. Identify the actual cause.
+3. Determine whether the error was caused by the current change.
+4. Fix only the relevant issue.
+5. Run validation again.
 
-Keep the response concise.
+If the error is unrelated to the current task:
 
-Do not propose unrelated improvements.
+Do not fix it automatically.
+
+Report it.
 
 ---
 
-# Final Rule
+# 41. Task Execution Protocol
 
-When in doubt:
+For non-trivial tasks use:
 
-**Inspect the existing implementation first.**
+## Step 1 — Understand
 
-**Follow the existing architecture.**
+Determine exactly what the user wants.
 
-**Create both pt-BR and English versions for all new user-facing content.**
+## Step 2 — Inspect
 
-**Make the smallest change possible.**
+Read only the relevant files.
 
-**Validate.**
+## Step 3 — Plan
 
-**Stop.**
+Determine the smallest implementation necessary.
+
+## Step 4 — Implement
+
+Make the change.
+
+## Step 5 — Validate
+
+Run the relevant checks.
+
+## Step 6 — Stop
+
+Do not continue improving unrelated areas.
+
+---
+
+# 42. Communication
+
+Before a substantial change, briefly state:
+
+* what is being changed;
+* which files are relevant;
+* the implementation approach.
+
+After completion, report:
+
+* what changed;
+* files changed;
+* validation performed;
+* remaining issues directly related to the task.
+
+Keep responses concise.
+
+Do not provide unnecessary explanations.
+
+Do not propose unrelated improvements after completing the task.
+
+---
+
+# 43. Final Rules
+
+When working on this project:
+
+1. Inspect before assuming.
+2. Follow the existing architecture.
+3. Keep changes small.
+4. Do not fabricate information.
+5. Preserve the user's Markdown content.
+6. Treat Markdown as the source of truth for articles.
+7. Keep articles bilingual.
+8. Preserve the existing localization system.
+9. Validate changes.
+10. Stop when the task is complete.
+
+The goal is not to change as much code as possible.
+
+The goal is to make the smallest correct change that completely satisfies the user's request.
